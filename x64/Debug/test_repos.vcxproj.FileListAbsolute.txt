@@ -1,0 +1,4 @@
+D:\Diploma\test_repos\x64\Debug\test_repos.vcxproj.CopyComplete
+D:\Diploma\test_repos\x64\Debug\test_repos.exe
+D:\Diploma\test_repos\x64\Debug\gtest.pdb
+D:\Diploma\test_repos\x64\Debug\gtest_main.pdb

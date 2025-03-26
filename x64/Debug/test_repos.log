@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  test.cpp
+D:\Diploma\test_repos\stringProcessor.h(10,34): warning C4114: Множественное использование одного и того же квалификатора типа.
+D:\Diploma\test_repos\stringProcessor.h(20,16): warning C4267: return: преобразование из "size_t" в "const int32_t"; возможна потеря данных
+  test_repos.vcxproj -> D:\Diploma\test_repos\x64\Debug\test_repos.exe

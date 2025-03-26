@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Executable>D:\Diploma\test_repos\x64\Debug\test_repos.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="StringProcessorTest.GetString" Duration="1" />
+    <TestDuration Test="StringProcessorTest.IsValidString" Duration="1" />
+    <TestDuration Test="StringProcessorTest.ProcessString" Duration="1" />
+    <TestDuration Test="StringProcessorTest.StringFunctions" Duration="0" />
+    <TestDuration Test="QuickSortTest.SortsArrayInAscendingOrder" Duration="1" />
+    <TestDuration Test="QuickSortTest.SingleElementArray" Duration="1" />
+    <TestDuration Test="QuickSortTest.SortedArray" Duration="1" />
+    <TestDuration Test="QuickSortTest.ReverseSortedArray" Duration="1" />
+    <TestDuration Test="QuickSortTest.RandomArray" Duration="1" />
+    <TestDuration Test="StringProcessorTest.ValidString_ReturnsTrue" Duration="1" />
+    <TestDuration Test="StringProcessorTest.InvalidString_ReturnsFalse" Duration="1" />
+    <TestDuration Test="SwapTest.SwapsValuesCorrectly" Duration="1" />
+    <TestDuration Test="IsStringValidTest.ValidatesStringCorrectly" Duration="1" />
+    <TestDuration Test="ProcessStringTest.ProcessesStringCorrectly" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>
