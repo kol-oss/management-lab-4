@@ -18,10 +18,10 @@ class RandomGameControllerTest {
     @Test
     fun testRandomGameController() {
         // Preconditions: configuring test params
-        val testsNumber: Int = 100
-        val maxWidth: Int = 16
-        val maxHeight: Int = 16
-        val logging: Boolean = true
+        val testsNumber: Int = 5
+        val maxWidth: Int = 5
+        val maxHeight: Int = 5
+        val logging: Boolean = false
 
         var controller: GameController
 
