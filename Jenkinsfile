@@ -1,33 +1,51 @@
 pipeline {
-    agent any
+	agent {
+		docker {
+			image 'maven:3.8.6-openjdk-17'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
+
+    environment {
+		MAVEN_OPTS = '-Dmaven.repo.local=/root/.m2/repository'
+    }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'add here your url', credentialsId: 'add credentialsId'
+		stage('Checkout') {
+			steps {
+				git url: 'https://github.com/username/im-2x-lab-4-kol-oss.git', branch: 'main'
             }
         }
-        
+
         stage('Build') {
-            steps {
-                // Крок для збірки проекту з Visual Studio
-                // Встановіть правильні шляхи до рішення/проекту та параметри MSBuild
-                bat '"path to MSBuild" test_repos.sln /t:Build /p:Configuration=Release'
+			steps {
+				sh 'mvn clean package'
             }
         }
 
         stage('Test') {
-            steps {
-                // Команди для запуску тестів
-                bat "x64\\Debug\\test_repos.exe --gtest_output=xml:test_report.xml"
+			steps {
+				sh 'mvn test'
+            }
+        }
+
+        stage('Run') {
+			steps {
+				sh 'mvn exec:java'
             }
         }
     }
 
     post {
-    always {
-        // Publish test results using the junit step
-         // Specify the path to the XML test result files
+		success {
+			echo 'Build, tests, and execution successful!'
+        }
+        failure {
+			echo 'Build or tests failed!'
+        }
+        always {
+			junit '**/target/surefire-reports/TEST-*.xml'
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        }
     }
-}
 }
