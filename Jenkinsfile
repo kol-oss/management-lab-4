@@ -25,10 +25,5 @@ pipeline {
                 }
             }
         }
-        stage('Post') {
-			steps {
-				junit '**/target/test-*.xml'
-            }
-        }
     }
 }
