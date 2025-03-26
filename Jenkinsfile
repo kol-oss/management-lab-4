@@ -4,29 +4,26 @@ pipeline {
     stages {
 		stage('Checkout') {
 			steps {
-				git 'https://github.com/kol-oss/management-lab-4'
+				git branch: 'main', url: 'https://github.com/kol-oss/management-lab-4.git'
             }
         }
-
         stage('Build') {
 			steps {
-                script {
-                    sh 'mvn clean install'
+				script {
+					sh 'mvn clean install'
                 }
             }
         }
-
         stage('Test') {
 			steps {
-                script {
-                    sh 'mvn test'
+				script {
+					sh 'mvn test'
                 }
             }
         }
-
         stage('Post') {
 			steps {
-                junit '**/target/test-*.xml'
+				junit '**/target/test-*.xml'
             }
         }
     }
